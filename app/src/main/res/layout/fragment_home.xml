@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout   android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_shop_information"
+                android:layout_width="250sp"
+                android:layout_height="100sp"
+                android:text="@string/shop_information"
+                app:backgroundTint="@color/green"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_categories"
+                android:layout_width="250sp"
+                android:layout_height="100sp"
+                android:backgroundTint="@color/violate"
+                android:text="@string/categories"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_products"
+                android:layout_width="250sp"
+                android:layout_height="100sp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/products"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_invoice"
+                android:layout_width="250sp"
+                android:layout_height="100sp"
+                android:backgroundTint="@color/purple"
+                android:text="@string/invoice"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</layout>
+
