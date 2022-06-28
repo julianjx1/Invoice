@@ -23,6 +23,10 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         });
+        binding.btnSignUp.setOnClickListener(view -> {
+            startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            finish();
+        });
 
     }
 

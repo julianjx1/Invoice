@@ -4,10 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Projects/Invoice/app/src/main/res/layout/fragment_first.xml" value="0.18802083333333333" />
+        <entry key="app/src/main/res/drawable/product_view_background.xml" value="0.201" />
+        <entry key="app/src/main/res/drawable/product_view_root_background.xml" value="0.201" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/category_item.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.26944444444444443" />
+        <entry key="app/src/main/res/layout/fragment_category_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_product_info.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_products.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/fragment_shop_information.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/invoice_item_row.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/product_item_row.xml" value="0.15677083333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

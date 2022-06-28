@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
             Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_shopInformationFragment);
         });
         binding.btnCategories.setOnClickListener(view -> {
-            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_productsFragment);
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_categoriesFragment);
         });
         binding.btnProducts.setOnClickListener(view -> {
             Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_productsFragment);

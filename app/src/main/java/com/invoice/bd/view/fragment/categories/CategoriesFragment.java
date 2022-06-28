@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,7 +32,11 @@ public class CategoriesFragment extends Fragment {
         categories.add("Electronics");
         categories.add("Foods");
         CategoryAdapter categoryAdapter = new CategoryAdapter(categories, requireActivity());
+        binding.categoryList.setLayoutManager( new LinearLayoutManager(requireContext()));
         binding.categoryList.setAdapter(categoryAdapter);
+        binding.add.setOnClickListener(view -> {
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_categoriesFragment_to_categoryInfoFragment);
+        });
         return binding.getRoot();
     }
 }

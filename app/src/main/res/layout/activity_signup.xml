@@ -3,6 +3,13 @@
 <layout  xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="user"
+            type="com.invoice.bd.model.User" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +51,8 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/first_name"
@@ -53,6 +61,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/first_name"
                     android:inputType="text"
                     android:maxLines="1"
+
+                    android:text="@={user.firstName}"
                     android:textSize="14dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -68,7 +78,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_last_name"
@@ -77,6 +87,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/last_name"
                     android:inputType="text"
                     android:maxLines="1"
+                    android:text="@={user.lastName}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -94,7 +105,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_full_address"
@@ -103,6 +114,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/full_address"
                     android:inputType="text"
                     android:maxLines="1"
+                    android:text="@={user.fullAddress}"
                     android:textSize="14dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +132,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_email"
@@ -129,6 +141,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
+                    android:text="@={user.email}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -144,7 +157,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_mobile"
@@ -153,6 +166,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/mobile_number"
                     android:inputType="number"
                     android:maxLines="1"
+                    android:text="@={user.mobileNumber}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -168,7 +182,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_zip_code"
@@ -177,6 +191,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/username"
                     android:inputType="text"
                     android:maxLines="1"
+                    android:text="@={user.username}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -193,7 +208,7 @@ xmlns:tools="http://schemas.android.com/tools">
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
                 app:endIconMode="password_toggle"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_password"
@@ -202,6 +217,7 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:maxLines="1"
+                    android:text="@={user.password}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
