@@ -14,6 +14,7 @@
     <color name="black_light">#99000000</color>
     <color name="light_white">#E6FFFFFF</color>
     <color name="background_color">#87FFFFFF</color>
+    <color name="product_background_color">#70A7B027</color>
     <color name="background_row">#DAE8FC</color>
     <color name="orange">#FD9808</color>
     <color name="blue">#03A9F4</color>

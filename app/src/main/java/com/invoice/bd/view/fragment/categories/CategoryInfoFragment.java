@@ -28,12 +28,10 @@ public class CategoryInfoFragment extends Fragment {
 
             }
         });
-        binding.btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        if(getArguments()!= null){
+          binding.etCategory.setText(getArguments().getString("name"));
+        }
 
-            }
-        });
         return binding.getRoot();
     }
 }

@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="shop"
+            type="com.invoice.bd.model.Shop" />
+    </data>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -35,7 +42,7 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/first_name"
@@ -44,6 +51,7 @@
                     android:inputType="text"
                     android:hint="@string/shop_name"
                     android:maxLines="1"
+                    android:text="@={shop.shopName}"
                     android:textSize="14dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +67,7 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_last_name"
@@ -68,6 +76,7 @@
                     android:inputType="text"
                     android:hint="@string/shop_description"
                     android:maxLines="1"
+                    android:text="@={shop.shopDescription}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -85,7 +94,7 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_full_address"
@@ -94,6 +103,7 @@
                     android:inputType="number"
                     android:maxLines="1"
                     android:hint="@string/shop_number"
+                    android:text="@={shop.shopNumber}"
                     android:textSize="14dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -111,7 +121,7 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_mobile"
@@ -120,6 +130,7 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:hint="@string/shop_address"
+                    android:text="@={shop.shopAddress}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -136,7 +147,7 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_email"
@@ -145,6 +156,7 @@
                     android:inputType="phone"
                     android:maxLines="1"
                     android:hint="@string/mobile_number"
+                    android:text="@={shop.mobileNumber}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -160,7 +172,7 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:hintEnabled="false">
+                app:hintEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_zip_code"
@@ -169,6 +181,7 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:hint="@string/email"
+                    android:text="@={shop.email}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>

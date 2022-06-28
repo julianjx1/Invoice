@@ -2,6 +2,7 @@ package com.invoice.bd.view.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,9 +44,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int position) {
         holder.categoryItemBinding.category.setText(categories.get(position));
-        holder.categoryItemBinding.categoryLayout.setOnClickListener(view -> {
-
-            Navigation.findNavController(activity, R.id.nav_host_fragment).navigate(R.id.action_categoriesFragment_to_categoryInfoFragment);
+        holder.categoryItemBinding.delete.setOnClickListener(view -> {
+            categories.remove(position);
+            notifyDataSetChanged();
+        });
+        holder.categoryItemBinding.edit.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("name", categories.get(position));
+            Navigation.findNavController(activity, R.id.nav_host_fragment).navigate(R.id.action_categoriesFragment_to_categoryInfoFragment, bundle);
         });
     }
 
