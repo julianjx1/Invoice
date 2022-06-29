@@ -25,12 +25,7 @@
                 android:text="@string/shop_information"
                 app:backgroundTint="@color/green"
                 />
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_categories"
-                android:layout_width="250sp"
-                android:layout_height="100sp"
-                android:backgroundTint="@color/violate"
-                android:text="@string/categories"/>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_product_upload"
                 android:layout_width="250sp"
