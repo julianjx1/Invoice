@@ -31,6 +31,9 @@ public class HomeFragment extends Fragment {
         binding.btnCategories.setOnClickListener(view -> {
             Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_categoriesFragment);
         });
+        binding.btnProductUpload.setOnClickListener(view -> {
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_productInfoFragment);
+        });
         binding.btnProducts.setOnClickListener(view -> {
             Navigation.findNavController(requireActivity(), R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_productsFragment);
         });

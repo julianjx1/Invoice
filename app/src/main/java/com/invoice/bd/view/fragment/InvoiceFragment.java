@@ -56,7 +56,7 @@ public class InvoiceFragment extends Fragment implements PDFUtility.OnDocumentCl
             rowBindingArrayList.add(rowBinding);
         });
 
-        binding.delete.setOnClickListener(view -> removeRow());
+
 
         binding.print.setOnClickListener(this::generatePDF);
         return binding.getRoot();
@@ -64,46 +64,64 @@ public class InvoiceFragment extends Fragment implements PDFUtility.OnDocumentCl
 
     private InvoiceItemRowBinding newRow(){
         InvoiceItemRowBinding rowBinding = DataBindingUtil.inflate(getLayoutInflater(), R.layout.invoice_item_row,binding.table,false);
-        rowBinding.no.setText(String.valueOf(rowBindingArrayList.size()+1));
+      //  rowBinding.no.setText(String.valueOf(rowBindingArrayList.size()+1));
         String[] language ={"Biscuit", "Chocolate"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>
                 (requireContext(),android.R.layout.select_dialog_item,language);
-        rowBinding.productName.setThreshold(1);//will start working from first character
-        rowBinding.productName.setAdapter(adapter);//setting the adapter data into the
-        rowBinding.quantity.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//        rowBinding.productName.setThreshold(1);//will start working from first character
+//        rowBinding.productName.setAdapter(adapter);//setting the adapter data into the
+//        rowBinding.quantity.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                setAmount(rowBinding);
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
+//        rowBinding.rate.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                setAmount(rowBinding);
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//
+//            }
+//        });
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                setAmount(rowBinding);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
+        rowBinding.addQuantity.setOnClickListener(view -> {
+            Integer quantity = Integer.parseInt(rowBinding.quantity.getText().toString());
+            quantity += 1;
+            rowBinding.quantity.setText(String.valueOf(quantity));
+            setAmount(rowBinding);
         });
-        rowBinding.rate.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        rowBinding.removeQuantity.setOnClickListener(view -> {
+            Integer quantity = Integer.parseInt(rowBinding.quantity.getText().toString());
+            quantity -= 1;
+            if(quantity < 0)
+                removeRow(rowBinding);
+            else {
+                rowBinding.quantity.setText(String.valueOf(quantity));
                 setAmount(rowBinding);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
             }
         });
         return rowBinding;
     }
+
 
     private void setAmount(InvoiceItemRowBinding rowBinding){
         try{
@@ -120,8 +138,8 @@ public class InvoiceFragment extends Fragment implements PDFUtility.OnDocumentCl
         }
 
     }
-    private void removeRow(){
-        InvoiceItemRowBinding rowBinding = rowBindingArrayList.remove(rowBindingArrayList.size()-1);
+    private void removeRow(InvoiceItemRowBinding rowBinding){
+        rowBindingArrayList.remove(rowBindingArrayList.size()-1);
         try{
             int previewsTotal = Integer.parseInt(rowBinding.amount.getText().toString());
             totalAmount -= previewsTotal;
@@ -169,7 +187,7 @@ public class InvoiceFragment extends Fragment implements PDFUtility.OnDocumentCl
         List<String[]> temp = new ArrayList<>();
         for(InvoiceItemRowBinding tableRowBinding: rowBindingArrayList){
             temp.add(new String[] {
-                    tableRowBinding.no.getText().toString(),
+                   // tableRowBinding.no.getText().toString(),
                     tableRowBinding.productName.getText().toString(),
                     tableRowBinding.quantity.getText().toString(),
                     tableRowBinding.rate.getText().toString(),
