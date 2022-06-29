@@ -34,6 +34,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text=""
+
                         android:hint="Search Product"
                         android:background="@android:color/transparent"
                         android:textSize="20dp"
@@ -80,12 +81,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
+
                         android:paddingTop="10dp"
                         android:paddingRight="10dp">
 
                         <TableRow
                             android:background="#0079D6"
                             android:padding="5dp">
+
 
                             <TextView
                                 android:layout_width="wrap_content"

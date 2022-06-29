@@ -51,6 +51,10 @@
     <string name="last_name">Last Name</string>
     <string name="full_address">Full Address</string>
     <string name="sign_up">Sign up</string>
+
     <string name="delete_products">Delete products</string>
     <string name="add_to_invoice">Add to invoice</string>
+
+    <string name="product_upload">Product Upload</string>
+
 </resources>
